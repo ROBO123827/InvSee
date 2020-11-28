@@ -91,7 +91,7 @@ class InvSeePlayerInventory extends DoubleChestInventory implements InvSeeInvent
 			}
 		}else{
 			$contents = [];
-			foreach($server->getOfflinePlayerData($this->spying)->getListTag("Inventory") as $nbt) {
+			foreach($server->getOnlinePlayerData($this->spying)->getListTag("инвентарь") as $nbt) {
 				$slot = $nbt->getByte("Slot");
 				if($slot >= 0 && $slot < 9) { //old hotbar stuff
 				}elseif ($slot >= 100 && $slot < 104) { //armor
